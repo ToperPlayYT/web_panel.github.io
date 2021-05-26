@@ -9,10 +9,10 @@
 <body>
     <button onclick="start()" style="display:block" id="start_button">click</button>
     <button onclick="test()" style="display:none" id="click_button">click</button>
-    <a id="timer" style="display:none">TIME</a>
+    <a id="timer" style="display:none"></a>
     <script type='text/x-smallsscript'>
-        local second = 10 + 1
         fun counter(id) {
+            var second = 10 + 1;
             var counter_ = setInterval(function() {
                 if (second > 0) {
                     second--;
@@ -20,8 +20,8 @@
                 if (second < 10) {
                     second = "0" + second;
                 }
-                var text = "Time remained: "+second.toString()
-                doc.ElById(id).innerHTML=text
+                var text = second == 0 ? "TIME IS UP!" : "Time remained: "+second.toString()
+                doc.ElById(id).innerHTML=text;
             }, 1000);
         }
         local clicks = 0;
