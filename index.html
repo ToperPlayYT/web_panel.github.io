@@ -8,7 +8,7 @@
 
 <body>
     <button onclick="start()" style="display:block" id="start_button">start</button>
-    <button onclick="test()" style="display:none" id="click_button">click</button>
+    <button onclick="reg()" style="display:none" id="click_button">click</button>
     <a id="timer" style="display:none"></a>
     <script type='text/x-smallsscript'>
         fun counter(id) {
@@ -25,13 +25,13 @@
             }, 1000);
         }
         local clicks = 0;
-        fun test() {
+        fun reg() {
             clicks add 1;
             log(clicks);
         }
         fun start() {
             doc.ElById("start_button").style.display="none";
-            doc.ElById("start_button").style.display="block";
+            doc.ElById("click_button").style.display="block";
             doc.ElById("timer").style.display="block";
             counter("timer")
         }
